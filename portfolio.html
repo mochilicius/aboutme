@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome!</title>
+</head>
+<style>
+
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/shape-circle.css');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-left-alt.css');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+@import url('https://unpkg.com/css.gg@2.0.0/icons/css/twitter.css');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+
+:root{
+    --light:rgba(216, 199, 213, 0.75);
+    --accentlight:rgba(150, 88, 118, 0.65);
+    --dark:rgba(112, 26, 37, 0.95);
+    --accentdark:rgba(100, 47, 72, 0.65);
+    --darker:rgb(36, 19, 27);
+    --accent: rgb(229, 0, 160);
+    --pfp: rgb(155, 94, 127);
+}
+@keyframes animborda{
+    0%{border-color: rgb(211, 97, 221)}
+    20%{border-color: rgb(90, 146, 209)}
+    40%{border-color: rgb(86, 209, 92)}
+    60%{border-color: rgb(231, 210, 89)}
+    80%{border-color: rgb(214, 90, 90)}
+    100%{border-color: rgb(210, 93, 221)}
+}
+footer{
+    color: rgb(211, 97, 221, 0.50   );
+    background: rgb(35,5,59);
+    background: linear-gradient(90deg, rgba(35,5,59,0.25), rgba(121,9,89,0.25) 53%, rgba(19,0,255,0.25) 100%);
+}
+a{
+    margin:5px;
+    color:rgb(100, 47, 73);
+}
+a:hover{
+    color:rgb(158, 82, 168);
+}
+hr {
+    border: top 3px double var(--pfp);
+    text-align: center;
+    height: 5px;
+}
+body {
+    background-image: url("XP-pen-review-artwork-waneella.gif");
+    background-repeat: no-repeat;
+    background-size:cover; 
+    background-attachment:fixed;
+}
+.janela {
+    margin: 125px;
+    width: 60%;
+    height: 600px;
+    position: relative;
+    background-color: var(--light);
+    outline: 2px dashed var(--accentdark);
+}
+.header{
+    position: relative;
+    padding: 5px;
+    text-align: left;
+    background-color: var(--accentlight);
+    outline: 2px dashed var(--accentdark);
+    color: var(--darker);
+    font-family: "Croissant One";
+}
+.header i{
+    float: right;
+    margin: 5px;
+}
+.content{
+    width: 100%;
+    margin: 5px;
+    /* outline: 1px dashed var(--accentdark); */
+    height: 350px;
+    overflow: hidden;
+    white-space-collapse: collapse;
+    scrollbar-color: var(--accentdark) var(--accentlight);
+    scrollbar-width: thin;
+}
+
+.header2{
+    margin: 5px;
+    height: 5px;
+    background-color: var(--accentlight);
+    color: var(--darker);
+    font-family: "Croissant One";
+}
+.pfp{
+    background-image: url("");
+    background-size: cover;
+    border: 5px solid var(--pfp);
+    border-radius: 70px 70px .25rem .25rem;
+    float: left;
+    margin: 10px;
+    width: 25%;
+    height: 90%;
+
+    animation: animborda 5s infinite;
+}
+.texto{
+    /* outline: 1px dashed var(--accentdark); */
+    margin: 5px;
+    font-size: 14pt;
+}
+#nome{
+    display: inline-block; 
+    margin-top: 5%;
+    font-style: italic;
+    transition: transform 0.6s ease-out;
+}
+#nome:hover{
+    transform: rotate(360deg);
+}
+#form{
+    width: 725px;
+    height: 520px;
+    margin: 10px;
+    border: 5px;
+    border-style: solid dashed;
+    animation: animborda 5s infinite;
+    font-family: "Reddit Mono";
+    font-weight: 14pt;
+    color:rgb(36, 19, 32);
+    background-color: rgba(90, 49, 88, 0.25);
+    /* opções em grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px 5px;
+}
+#form legend{
+    border: 2px solid;
+    padding: 2px;
+    animation: animborda 5s infinite;
+    background-color: var(--accentlight);
+    font-family: "Croissant One";
+    color:rgb(56, 32, 50);;
+}
+.cube{
+
+    min-width: 0;
+    overflow: hidden;
+    margin:5px;
+    padding: 5px;
+    border: 4px rgba(56, 14, 58, 0.425);
+    border-style: dashed solid;
+    text-align: left;
+    /* animation: animborda 5s infinite; */
+    background-color: rgba(238, 226, 236, 0.25);
+}
+.comission{
+    padding: 5px;
+}
+.comission table{
+    border-collapse: collapse;
+    font-size: 14pt;
+}
+.comission thead>tr>th{
+    border-bottom: solid 3px #6e235e;
+    text-align: center;
+}
+.comission td{
+    padding: 10px;
+    border-bottom: solid 2px #6e235e9a;
+}
+.comission input{
+    float: right;
+    border: 2px solid;
+    animation: animborda 5s infinite;
+}
+.opcao{
+    padding: 5px;
+    font-size: 14pt;
+    font-style:italic;
+}
+#informa{
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    font-size: 14pt;
+    padding: 5px;
+}
+#informa input{
+    height: 20px;
+    width: 170px;
+    float: right;
+    border: 2px solid;
+    animation: animborda 5s infinite;
+}
+#informa select{
+    height: 25px;
+    width: 178px;
+    float: right;
+    border: 2px solid;
+    animation: animborda 5s infinite;
+}
+#tabela{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+#tabela table{
+    border-collapse: collapse;
+}
+#tabela thead{
+    border-bottom: solid 3px #6e235e;
+}
+#tabela td{
+    padding: 10px;
+    border-bottom: solid 2px #6e235e9a;
+}
+#botoes{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+#botoes button{
+    margin:5px;
+    border: 5px;
+    border-style: dashed solid;
+    animation: animborda 5s infinite;
+    background-color: var(--light);
+    font-family: "Reddit Mono";
+    font-size: 18pt;
+    width: 160px;
+    height: 70px;
+    color:rgb(49, 52, 90);
+}
+#botoes button:hover{
+    background-color: rgba(216, 199, 213, 0.80);
+    color:rgb(70, 60, 122);
+
+}
+#botoes button:active{
+    background-color: rgba(185, 164, 197, 0.8);
+    color:rgb(70, 60, 122); 
+}
+.imagem{
+    display: inline-block;
+}
+.imagem img{
+    max-height: 160px;
+    border: 2px dashed var(--accentdark);
+    transition:height 0.5s;
+}
+.imagem img:hover{
+    border: 2px solid var(--accentdark);
+    height: 300px; 
+}
+.album{
+    margin: 5px;
+    height: 185px; 
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-color: var(--accentdark) var(--accentlight);
+    scrollbar-width: thin;
+}
+#scrollbar{
+    margin: 5px;
+    overflow-x: auto;
+    scrollbar-color: var(--accentlight) var(--light);
+    scrollbar-width: thin;
+}
+</style>
+
+<body> 
+<center>
+    
+    <div class="janela">
+        <div class="header"> 
+            <span>mochi.exe</span>
+            <span><i class="gg-shape-circle"></i></span>
+            <span><i class="gg-arrows-expand-left-alt"></i></span>
+        </div>
+        <div class="content">
+            <div class="pfp"></div>
+            <div class="texto" style="height: 340px; width: 65%;display: inline-block;">
+                <div class="texto" id="nome"><h1>Mochi</h1></div>
+                <div class="texto" style="display: inline-block;font-style: italic;"><p>brazilian ⋄ artist ⋄ programmer</p></div>
+                <div style="font-family: Zen Maru Gothic;">
+                    <a href="https://twitter.com/devilsnameis" target="_blank">twitter</a>
+                    <a href="https://mochilicius.tumblr.com/" target="_blank">tumblr</a>
+                    <a href="https://www.twitch.tv/mochilicius" target="_blank">twitch</a>
+                    <a href="https://discord.com/users/452581541239980033" target="_blank">discord</a>
+                </div>
+                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh nisl, pulvinar sed nunc ut, auctor laoreet nunc. Proin nec ex sapien. Donec non turpis nisi. Donec efficitur dui quis nibh dictum porttitor. </p>
+            </div>
+        </div>
+        <div class="header2"></div>
+        <div class="album scrollbar">
+                <div class="imagem">
+                    <img src="https://mochilicius.carrd.co/assets/images/gallery01/04bc56a1.jpg?v=09937b15">
+                </div>
+                <div class="imagem">
+                    <img src="https://mochilicius.carrd.co/assets/images/gallery01/e8f05611.jpg?v=09937b15">
+                </div>
+                <div class="imagem">
+                    <img src="https://mochilicius.carrd.co/assets/images/gallery01/fd34b971.png?v=09937b15">
+                </div>
+                <div class="imagem">
+                    <img src="https://mochilicius.carrd.co/assets/images/gallery02/5f2c515e.jpg?v=09937b15">
+                </div>
+                <div class="imagem">
+                    <img src="https://mochilicius.carrd.co/assets/images/gallery05/48970e6f.jpg?v=09937b15">
+                </div>
+
+        </div>
+    </div>
+
+
+<!--segunda janela-->
+
+
+    <div class="janela">
+        <div class="header"> 
+            <span>comissions.exe</span>
+            <span><i class="gg-shape-circle"></i></span>
+            <span><i class="gg-arrows-expand-left-alt"></i></span>
+        </div>
+            <div id="scrollbar">
+            <form>
+                <fieldset id="form">
+                <legend> Preencha aqui um pedido de comission!</legend>
+
+                    <div class="cube" id="informa" >
+                        <table class="comission">
+                            <thead>
+                                <tr>
+                                <th colspan=2>Formulário para Comissions</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td><label for="nomecompleto">Nome: </label></td>
+                                <td><input type="text" name="nomecompleto" id="nomecompleto" required /></td>
+                            </tr>
+                            <tr>
+                                <td><label for="mail">Email: </label></td>
+                                <td><input type="email" name="mail" id="mail" required /></td>
+                            </tr>
+                            <tr class="opcao">
+                                <!--size-->
+                                <td><label for="size">Tamanho:</label></td>
+                                <td>   
+                                    <select name="size" id="drawingsize" required>
+                                        <option value="">--Selecione uma Opção--</option>
+                                        <option value="head">Headshot</option>
+                                        <option value="bust">Bust</option>
+                                        <option value="half">Half-Body</option>
+                                        <option value="full">Full-Body</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="opcao">
+                                <!--tipo-->
+                                <td><label for="typeC">Tipo de Coloração:</label></td>
+                                <td>
+                                    <select name="colortype" id="colortype" required>
+                                        <option value="">--Selecione uma Opção--</option>
+                                        <option value="sketch">Rascunho</option>
+                                        <option value="color">Colorido</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="opcao">
+                                <!--coloração-->
+                                <td><label for="typeS">Tipo de Sombra:</label></td>
+                                <td>
+                                    <select name="shadowtype" id="shadowtype">
+                                        <option value="">--Selecione uma Opção--</option>
+                                        <option value="none">Nenhum</option>
+                                        <option value="shadows">Sombreado</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class=cube id="tabela">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sizes</th>
+                                    <th>Sketch</th>
+                                    <th>Color</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>Headshot</td>
+                                <td>$3</td>
+                                <td>$5</td>
+                            </tr>
+                            <tr>
+                                <td>Bust</td>
+                                <td>$4</td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>Half-Body</td>
+                                <td>$6</td>
+                                <td>$12</td>
+                            </tr>
+                            <tr>
+                                <td>Fullbody</td>
+                                <td>$7</td>
+                                <td>$15</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div id=botoes >
+                        <button type="reset" id="nome" >clear!</button>
+                        <button type="submit" id="nome" >submit!</button>
+                    </div>
+
+            </fieldset>
+            </form>
+        </div>
+        </div>
+    </div>
+<footer>&copy; Code by @devilsnameis. All rights reserved</footer>
+
+
+
+
+
+
+
+</center>
+</body>
+</html>
