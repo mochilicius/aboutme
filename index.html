@@ -92,19 +92,7 @@ body {
     color: var(--darker);
     font-family: "Croissant One";
 }
-/* .pfp{
-    background-image: url("");
-    background-size: cover;
-    border: 5px solid var(--pfp);
-    border-radius: 70px 70px .25rem .25rem;
-    float: right;
-    margin: 10px;
-    width: 25%;
-    height: 90%;
-    animation: animborda 5s infinite;
-} */
 .texto{
-    /* outline: 1px dashed var(--accentdark); */
     margin: 5px;
     font-size: 16pt;
 }
@@ -285,12 +273,13 @@ body {
 }
 @keyframes hop{
   0% { transform: translateX(0) }
-  25% { transform: translateY(-5px)  rotate(10deg) translateX(10px)}
+  25% { transform: translateY(-10px)  rotate(10deg) translateX(10px)}
   50% { transform: translateY(0)}
-  75% { transform: translateY(-5px)  rotate(-10deg) translateX(-10px)}
+  75% { transform: translateY(-10px)  rotate(-10deg) translateX(-10px)}
   100% { transform: translateX(0) }
 }
 #pagedoll{
+    height: 300px;
     z-index: 1;
     position: fixed ;
     bottom: 0;
