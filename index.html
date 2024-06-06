@@ -349,115 +349,99 @@ audio{
 
 
 <!--segunda janela-->
+    <style>
+        #gallery{
+    border: 2px solid var(--accentdark);
+    margin: 5px;
+    padding: 5px;
+    height: 460px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+#gallery img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.imagem2 img{
+    max-height: 160px;
+    border: 2px dashed var(--accentdark);
+    transition: transform 200ms;
+}
+.imagem2 img:hover{
+    border: 2px solid var(--accentdark);
+    transform: translateY(+10px);
+    animation: upndown 1000ms infinite;
+}
+@keyframes upndown{
+  0% { transform: translateX(0) }
+  25% { transform: translateY(+5px)}
+  50% { transform: translateY(0)}
+  75% { transform: translateY(+5px)}
+  100% { transform: translateX(0) } 
+}
+    </style>
 
-
-    <div class="janela">
-        <div class="header"> 
-            <span>comissions.exe</span>
-            <span><i class="gg-shape-circle"></i></span>
-            <span><i class="gg-arrows-expand-left-alt"></i></span>
-        </div>
-            <div id="scrollbar">
-            <form>
-                <fieldset id="form">
-                <legend> Preencha aqui um pedido de comission!</legend>
-
-                    <div class="cube" id="informa" >
-                        <table class="comission">
-                            <thead>
-                                <tr>
-                                <th colspan=2>Formulário para Comissions</th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td><label for="nomecompleto">Nome: </label></td>
-                                <td><input type="text" name="nomecompleto" id="nomecompleto" required /></td>
-                            </tr>
-                            <tr>
-                                <td><label for="mail">Email: </label></td>
-                                <td><input type="email" name="mail" id="mail" required /></td>
-                            </tr>
-                            <tr class="opcao">
-                                <!--size-->
-                                <td><label for="size">Tamanho:</label></td>
-                                <td>   
-                                    <select name="size" id="drawingsize" required>
-                                        <option value="">--Selecione uma Opção--</option>
-                                        <option value="head">Headshot</option>
-                                        <option value="bust">Bust</option>
-                                        <option value="half">Half-Body</option>
-                                        <option value="full">Full-Body</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr class="opcao">
-                                <!--tipo-->
-                                <td><label for="typeC">Tipo de Coloração:</label></td>
-                                <td>
-                                    <select name="colortype" id="colortype" required>
-                                        <option value="">--Selecione uma Opção--</option>
-                                        <option value="sketch">Rascunho</option>
-                                        <option value="color">Colorido</option>
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr class="opcao">
-                                <!--coloração-->
-                                <td><label for="typeS">Tipo de Sombra:</label></td>
-                                <td>
-                                    <select name="shadowtype" id="shadowtype">
-                                        <option value="">--Selecione uma Opção--</option>
-                                        <option value="none">Nenhum</option>
-                                        <option value="shadows">Sombreado</option>
-                                    </select>
-                                </td>
-                            </tr>
-                        </table>
-
-                    </div>
-                    <div class=cube id="tabela">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Sizes</th>
-                                    <th>Sketch</th>
-                                    <th>Color</th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td>Headshot</td>
-                                <td>$3</td>
-                                <td>$5</td>
-                            </tr>
-                            <tr>
-                                <td>Bust</td>
-                                <td>$4</td>
-                                <td>$10</td>
-                            </tr>
-                            <tr>
-                                <td>Half-Body</td>
-                                <td>$6</td>
-                                <td>$12</td>
-                            </tr>
-                            <tr>
-                                <td>Fullbody</td>
-                                <td>$7</td>
-                                <td>$15</td>
-                            </tr>
-                        </table>
-
-                    </div>
-                    <div id=botoes >
-                        <button type="reset"  >clear!</button>
-                        <button type="submit"  >submit!</button>
-                    </div>
-
-            </fieldset>
-            </form>
-        </div>
-        </div>
+<div class="janela">
+    <div class="header"> 
+        <span>gallery.exe</span>
+        <span><i class="gg-shape-circle"></i></span>
+        <span><i class="gg-arrows-expand-left-alt"></i></span>
     </div>
-<footer>&copy; Code by @devilsnameis. All rights reserved</footer>
+    <div class="texto" style="height:50px; width: 65%;display: inline-block;">
+        <div class="texto"><h1><i>Le Gallery</i></h1></div>
+    </div>
+    <div id="gallery">
+
+        <div class="imagem2">
+            <a href="https://i.imgur.com/asFgWOH.jpg">
+            <img src="camellia.png" alt="Camellia">
+            </a>
+        </div>
+        <div class="imagem2">
+            <a href="https://i.imgur.com/hjrgqga.png">
+            <img src="graphics mike.png" alt="True and Honest Mike">
+            </a>
+        </div>
+        <div class="imagem2">
+            <a href="https://i.imgur.com/3HrcDvc.png">
+            <img src="tenna_fcight.png" alt="Tenna Fight Stage">
+            </a>
+        </div>
+        <div class="imagem2">
+            <a href="https://i.imgur.com/Jua1Yoq.png">
+                <img src="THE KING - Copy.png" alt="King Dedede">
+            </a>
+        </div> 
+        <div class="imagem2">
+            <a href="https://i.imgur.com/5D3g5UX.png">
+                <img src="ththe king.png" alt="King Dedede Eating Cake">
+            </a>
+        </div> 
+        <div class="imagem2">
+            <a href="https://i.imgur.com/RQowZiz.png">
+                <img src="uuuu2.png" alt="Technocolor Desert">
+            </a>
+        </div> 
+        <div class="imagem2">
+            <a href="https://i.imgur.com/JnIylqD.png">
+                <img src="chips pfp 2.png" alt="Chip">
+            </a>
+        </div> 
+        
+    </div>
+</div>
+
+
+
+
+
+
+    
+<footer>&copy; @devilsnameis, @mochilicius, @gipoggi; All rights reserved</footer>
 
 
 
