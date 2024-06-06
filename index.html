@@ -207,63 +207,12 @@ body {
     padding: 10px;
     border-bottom: solid 2px #6e235e9a;
 }
-#botoes{
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 4;
-    grid-row-end: 6;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-}
-#botoes button{
-    margin:5px;
-    border: 5px;
-    border-style: dashed solid;
-    animation: animborda 5s infinite;
-    background-color: var(--light);
-    font-family: "Reddit Mono";
-    font-size: 18pt;
-    width: 160px;
-    height: 70px;
-    color:rgb(49, 52, 90);
-}
 @keyframes shake{
   0% { transform: rotate(0deg); }
   25% { transform: rotate(5deg); }
   50% { transform: rotate(0eg); }
   75% { transform: rotate(-5deg); }
   100% { transform: rotate(0deg); }
-}
-#botoes button:hover{
-    animation: shake 200ms infinite;
-    background-color: rgba(216, 199, 213, 0.80);
-    color:rgb(70, 60, 122);
-}
-#botoes button:active{
-    background-color: rgba(185, 164, 197, 0.8);
-    color:rgb(70, 60, 122); 
-}
-.imagem{
-    display: inline-block;
-}
-.imagem img{
-    max-height: 160px;
-    border: 2px dashed var(--accentdark);
-    transition: transform 250ms;
-}
-.imagem img:hover{
-    border: 2px solid var(--accentdark);
-    transform: translateY(+10px);
-}
-.album{
-    margin: 5px;
-    height: 185px; 
-    overflow-y: hidden;
-    overflow-x: auto;
-    white-space: nowrap;
-    scrollbar-color: var(--accentdark) var(--accentlight);
-    scrollbar-width: thin;
 }
 #scrollbar{
     margin: 5px;
@@ -326,6 +275,41 @@ audio{
                 </div>
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh nisl, pulvinar sed nunc ut, auctor laoreet nunc. Proin nec ex sapien. Donec non turpis nisi. Donec efficitur dui quis nibh dictum porttitor. </p>
             </div>
+                                <div class=cube id="tabela">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Sizes</th>
+                                    <th>Sketch</th>
+                                    <td></td>
+                                    <th>Color</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>Headshot</td>
+                                <td>$3</td>
+                                <td></td>
+                                <td>$5</td>
+                            </tr>
+                            <tr>
+                                <td>Bust</td>
+                                <td>$4</td>
+                                <td></td>
+                                <td>$10</td>
+                            </tr>
+                            <tr>
+                                <td>Half-Body</td>
+                                <td>$6</td>
+                                <td></td>
+                                <td>$12</td>
+                            </tr>
+                            <tr>
+                                <td>Fullbody</td>
+                                <td>$7</td>
+                                <td></td>
+                                <td>$15</td>
+                            </tr>
+                        </table>
         </div>
     </div>
 
