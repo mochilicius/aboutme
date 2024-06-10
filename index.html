@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico">
     <title>Welcome!</title>
 </head>
 <style>
 
 @import url('https://unpkg.com/css.gg@2.0.0/icons/css/shape-circle.css');
 @import url('https://unpkg.com/css.gg@2.0.0/icons/css/arrows-expand-left-alt.css');
-@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
-@import url('https://unpkg.com/css.gg@2.0.0/icons/css/twitter.css');
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 
 :root{
     --light:rgba(216, 199, 213, 0.75);
@@ -62,6 +62,7 @@ body {
     position: relative;
     background-color: var(--light);
     outline: 2px dashed var(--accentdark);
+    border-radius: 5px;
 }
 .header{
     position: relative;
@@ -71,6 +72,7 @@ body {
     outline: 2px dashed var(--accentdark);
     color: var(--darker);
     font-family: "Croissant One";
+    border-radius: 5px;
 }
 .header i{
     float: right;
@@ -78,11 +80,12 @@ body {
 }
 .content{
     width: 100%;
-    margin: 5px;
-    /* outline: 1px dashed var(--accentdark); */    height: 350px;
+    /* outline: 1px dashed var(--accentdark); */    
+    height: 350px;
     overflow: hidden;
+    overflow-y: auto;
     white-space-collapse: collapse;
-    scrollbar-color: var(--accentdark) var(--accentlight);
+    scrollbar-color: var(--accentlight) var(--light);
     scrollbar-width: thin;
 }
 .header2{
@@ -93,6 +96,7 @@ body {
     font-family: "Croissant One";
 }
 .texto{
+    /* outline: 1px dashed var(--accentdark); */
     margin: 5px;
     font-size: 16pt;
 }
@@ -104,6 +108,19 @@ body {
 }
 #nome:hover{
     transform: rotate(360deg);
+}
+#form{
+    height: 520px;
+    margin: 10px;
+    border: 5px;
+    font-family: "Reddit Mono";
+    font-weight: 14pt;
+    color:rgb(36, 19, 32);
+    /* opções em grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px 5px;
 }
 .cube{
     min-width: 0;
@@ -148,6 +165,8 @@ body {
     grid-row-end: 6;
     font-size: 14pt;
     padding: 5px;
+    display: flex; 
+    justify-content: center;
 }
 #informa input{
     height: 20px;
@@ -173,6 +192,8 @@ body {
     justify-content: center;
 }
 #tabela table{
+    height: 90%;
+    width: 90%;
     border-collapse: collapse;
 }
 #tabela thead{
@@ -182,6 +203,27 @@ body {
     padding: 10px;
     border-bottom: solid 2px #6e235e9a;
 }
+#botoes{
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+#botoes button{
+    margin:5px;
+    border: 5px;
+    border-style: dashed solid;
+    animation: animborda 5s infinite;
+    background-color: var(--light);
+    font-family: "Reddit Mono";
+    font-size: 18pt;
+    width: 160px;
+    height: 70px;
+    color:rgb(49, 52, 90);
+}
 @keyframes shake{
   0% { transform: rotate(0deg); }
   25% { transform: rotate(5deg); }
@@ -189,24 +231,59 @@ body {
   75% { transform: rotate(-5deg); }
   100% { transform: rotate(0deg); }
 }
-#scrollbar{
+#botoes button:hover{
+    animation: shake 200ms infinite;
+    background-color: rgba(216, 199, 213, 0.80);
+    color:rgb(70, 60, 122);
+}
+#botoes button:active{
+    background-color: rgba(185, 164, 197, 0.8);
+    color:rgb(70, 60, 122); 
+}
+.imagem{
+    z-index: 1;
+    display: inline-block;
+    transition: transform 250ms;
+}
+.imagem img{
+    max-height: 160px;
+    border: 2px dashed var(--accentdark);
+    transition: transform 200ms;
+    border-radius: 5px;
+}
+@keyframes upndown{
+  0% { transform: translateX(0) }
+  25% { transform: translateY(+5px)}
+  50% { transform: translateY(0)}
+  75% { transform: translateY(+5px)}
+  100% { transform: translateX(0) } 
+}
+.imagem img:hover{
+    border: 2px solid var(--accentdark);
+    transform: translateY(+10px);
+    animation: upndown 1000ms infinite;
+}
+.album{
     margin: 5px;
+    height: 185px; 
+    overflow-y: hidden;
     overflow-x: auto;
-    scrollbar-color: var(--accentlight) var(--light);
+    white-space: nowrap;
+    scrollbar-color: var(--accentdark) var(--accentlight);
     scrollbar-width: thin;
 }
 @keyframes hop{
   0% { transform: translateX(0) }
-  25% { transform: translateY(-10px)  rotate(10deg) translateX(10px)}
+  25% { transform: translateY(-5px)  rotate(10deg) translateX(10px)}
   50% { transform: translateY(0)}
-  75% { transform: translateY(-10px)  rotate(-10deg) translateX(-10px)}
+  75% { transform: translateY(-5px)  rotate(-10deg) translateX(-10px)}
   100% { transform: translateX(0) }
 }
 #pagedoll{
     z-index: 1;
     position: fixed ;
-    bottom: 0;
     right: 0;
+    bottom: 0;
     animation: 4s hop infinite;
     transition: transform 2s;
 }
@@ -219,6 +296,12 @@ audio{
     top: 5px;
     z-index: 1;
     opacity: 65%;
+}
+.scrollbar{
+    padding-bottom: 5px;
+    overflow-x: auto;
+    scrollbar-color: var(--accentlight) var(--light);
+    scrollbar-width: thin;
 }
 </style>
 
@@ -248,9 +331,106 @@ audio{
                     <a href="https://www.twitch.tv/mochilicius" target="_blank">twitch</a>
                     <a href="https://discord.com/users/452581541239980033" target="_blank">discord</a>
                 </div>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh nisl, pulvinar sed nunc ut, auctor laoreet nunc. Proin nec ex sapien. Donec non turpis nisi. Donec efficitur dui quis nibh dictum porttitor. </p>
+                <p style="font-family: Comfortaa; font-size: 14pt;"> hey! I'm mochi, a beginner programmer and hobbyist artist. learning programming in HTMl, CSS and C. <br> I plan on seriously getting into Game Design, maybe one day i'll make it big'... </p>
             </div>
-            <div class="cube" id="tabela">
+        </div>
+        <div class="header2"></div>
+        <div class="album scrollbar">
+                <div class="imagem">
+                    <a href="https://i.imgur.com/Td4cNbU.png" target="_blank">
+                        <img src="bleu.jpg" alt="Bleu Rancho">
+                    </a>
+                </div>
+                <div class="imagem">
+                    <a href="https://i.imgur.com/JnIylqD.png" target="_blank">
+                        <img src="chip.jpg" alt="Chip">
+                    </a>
+                </div>
+                <div class="imagem">
+                    <a href="https://i.imgur.com/RQowZiz.png" target="_blank">
+                        <img src="techno.png" alt="Technocolor Desert">
+                    </a>
+                </div>
+                <div class="imagem">
+                    <a href="https://i.imgur.com/asFgWOH.jpg" target="_blank">
+                        <img src="CAMELLIA.jpg" alt="Camellia's Stage">
+                    </a>
+                </div>
+                <div class="imagem">
+                    <a href="https://i.imgur.com/5D3g5UX.png" target="_blank">
+                        <img src="DDDcake.jpg" alt="King Dedede">
+                    </a>
+                </div>
+        </div>
+    </div>
+
+
+<!--segunda janela-->
+
+<!--forms-->
+
+    <div class="janela">
+        <div class="header"> 
+            <span>comissions.exe</span>
+            <span><i class="gg-shape-circle"></i></span>
+            <span><i class="gg-arrows-expand-left-alt"></i></span>
+        </div>
+            <form class="scrollbar" action="giovanna.poggi@outlook.com" method="post" enctype="text/plain">
+                <fieldset id="form" class="scrollbar">
+                    <div class="cube" id="informa" >
+                        <table class="comission">
+                            <thead>
+                                <tr>
+                                <th colspan=2>Formulário para Comissions</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td><label for="nomecompleto">Nome: </label></td>
+                                <td><input type="text" name="nomecompleto" id="nomecompleto" required placeholder="seu nome aqui..."/> </td>
+                            </tr>
+                            <tr>
+                                <td><label for="mail">Email: </label></td>
+                                <td><input type="email" name="mail" id="mail" required placeholder="seu email aqui..." /> </td>
+                            </tr>
+                            <tr class="opcao">
+                                <!--size-->
+                                <td><label for="size">Tamanho:</label></td>
+                                <td>   
+                                    <select name="size" id="drawingsize" required>
+                                        <option value="">--Selecione uma Opção--</option>
+                                        <option value="head">Headshot</option>
+                                        <option value="bust">Bust</option>
+                                        <option value="half">Half-Body</option>
+                                        <option value="full">Full-Body</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="opcao">
+                                <!--tipo-->
+                                <td><label for="typeC">Tipo de Coloração:</label></td>
+                                <td>
+                                    <select name="colortype" id="colortype" required>
+                                        <option value="">--Selecione uma Opção--</option>
+                                        <option value="sketch">Rascunho</option>
+                                        <option value="color">Colorido</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="opcao">
+                                <!--coloração-->
+                                <td><label for="typeS">Tipo de Sombra:</label></td>
+                                <td>
+                                    <select name="shadowtype" id="shadowtype">
+                                        <option value="">--Selecione uma Opção--</option>
+                                        <option value="none">Nenhum</option>
+                                        <option value="shadows">Sombreado</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class=cube id="tabela">
                         <table>
                             <thead>
                                 <tr>
@@ -285,105 +465,19 @@ audio{
                                 <td>$15</td>
                             </tr>
                         </table>
-            </div>
+
+                    </div>
+                    <div id=botoes >
+                        <button type="reset"  >clear!</button>
+                        <button type="submit"  >submit!</button>
+                    </div>
+
+            </fieldset>
+            </form>
+        </div>
         </div>
     </div>
-
-
-<!--segunda janela-->
-    <style>
-        #gallery{
-    border: 2px solid var(--accentdark);
-    margin: 5px;
-    padding: 5px;
-    height: 460px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-#gallery img {
-  object-fit: cover;
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-.imagem2 img{
-    max-height: 160px;
-    border: 2px dashed var(--accentdark);
-    transition: transform 200ms;
-}
-.imagem2 img:hover{
-    border: 2px solid var(--accentdark);
-    transform: translateY(+10px);
-    animation: upndown 1000ms infinite;
-}
-@keyframes upndown{
-  0% { transform: translateX(0) }
-  25% { transform: translateY(+5px)}
-  50% { transform: translateY(0)}
-  75% { transform: translateY(+5px)}
-  100% { transform: translateX(0) } 
-}
-    </style>
-
-<div class="janela">
-    <div class="header"> 
-        <span>gallery.exe</span>
-        <span><i class="gg-shape-circle"></i></span>
-        <span><i class="gg-arrows-expand-left-alt"></i></span>
-    </div>
-    <div class="texto" style="height:50px; width: 65%;display: inline-block;">
-        <div class="texto"><h1><i>Le Gallery</i></h1></div>
-    </div>
-    <div id="gallery">
-
-        <div class="imagem2">
-            <a href="https://i.imgur.com/asFgWOH.jpg">
-            <img src="camellia.png" alt="Camellia">
-            </a>
-        </div>
-        <div class="imagem2">
-            <a href="https://i.imgur.com/hjrgqga.png">
-            <img src="graphics mike.png" alt="True and Honest Mike">
-            </a>
-        </div>
-        <div class="imagem2">
-            <a href="https://i.imgur.com/3HrcDvc.png">
-            <img src="tenna_fcight.png" alt="Tenna Fight Stage">
-            </a>
-        </div>
-        <div class="imagem2">
-            <a href="https://i.imgur.com/Jua1Yoq.png">
-                <img src="THE KING - Copy.png" alt="King Dedede">
-            </a>
-        </div> 
-        <div class="imagem2">
-            <a href="https://i.imgur.com/5D3g5UX.png">
-                <img src="ththe king.png" alt="King Dedede Eating Cake">
-            </a>
-        </div> 
-        <div class="imagem2">
-            <a href="https://i.imgur.com/RQowZiz.png">
-                <img src="uuuu2.png" alt="Technocolor Desert">
-            </a>
-        </div> 
-        <div class="imagem2">
-            <a href="https://i.imgur.com/JnIylqD.png">
-                <img src="chips pfp 2.png" alt="Chip">
-            </a>
-        </div> 
-        
-    </div>
-</div>
-
-
-
-
-
-
-    
-<footer>&copy; @devilsnameis, @mochilicius, @gipoggi; All rights reserved</footer>
+<footer>&copy; Code by <a href="https://twitter.com/devilsnameis">@devilsnameis</a>. Background by <a href="https://twitter.com/waneella_">@waneella_</a>. Hip Shop by Toby Fox. <br> All rights reserved to their respective owners.</footer>
 
 
 
